@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!--这样写不行哒，把baidu.com当做文件路径啦，当然也可以引用其他html文件，可以跳转-->
+    <a href="baidu.com">baidu</a>
+    <!--这样写也不妥，会默认你当前协议，你当前用的file协议，那默认使用就是file协议，最后同上-->
+    <a href="//baidu.com">baidu</a>
+    <!--可以这样写,如果这个链接支持https的话-->
+    <a href="http://baidu.com">baidu</a>
+    <a href="https://baidu.com">baidu</a>
+    <!--可以添加锚点，当然不会发起请求，因为这是页面内位置的跳转-->
+    <a href="#111">锚点</a>
+    <!--可以写查询字符串，这个会发起请求的-->
+    <a href="?name=wang">查询字符串</a>
+    <!--javascript伪协议-->
+    <a href="javascript:;">你点我没啥用，没反应的</a>
+    <!--这个会刷新页面-->
+    <a href="#">回到顶部</a>
+</body>
+</html>
