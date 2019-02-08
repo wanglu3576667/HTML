@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>input</title>
+</head>
+<body>
+    <!--input标签的type属性多种多样-->
+    
+    <!--单选,type="radio",name属性为你的表单命名，比如单选你需要把它们的name属性
+    设置为一样的，这样你的每个选项才会归为一类，若没有则你的每个选项都能选择，
+    value属性就是你每个选项的值，当你勾选提交，这个value值就会被提交-->
+    <!--label元素的作用就是当你点击它所包裹的文字，就会默认勾选对应的选项，
+    前提是label元素包裹着input元素和文字，或者label包裹文字而其for属性对应input的id属性。-->
+    <label><input type="radio" name="school" value="Oxfrod">牛津</label>
+    <input type="radio" name="school" value="jianqiao" id="school"><label for="school">剑桥</label>
+   
+    <!--多选,type="checkbox,其余属性和上面的单选是一样的"-->
+    <label><input type="checkbox" name="play" value="football">足球</label>
+    <label><input type="checkbox" name="play" value="pingpang">乒乓</label>
+    <label><input type="checkbox" name="play" value="run">跑步</label>
+
+    <!--文本框,如果你不加css的resize：none样式，那么这个文本框在浏览器内是可以随意
+    被拉大拉小的，这样是很不好的，cols属性设置列数，rows属性设置行数，但是这两个属性
+    非常不好用，因为你很难通过设置它们的值来决定你想要的大小，还是推荐使用css样式来改变他-->
+    <textarea style="resize:none;width:400px;height:300px;" name="Personality signature" id="" cols="30" rows="10"></textarea>
+    
+    <!--下拉菜单,multiple属性决定了你的下拉菜单可以多选，按住ctrl键执行，option的value
+    属性也是值的意思-->
+    <select name="city" multiple>
+        <option value="1">第一个</option>
+        <option value="2">第二个</option>
+        <!--selected属性是默认选择这个option元素内容-->
+        <option value="3" selected>第三个</option>
+        <!--disabled属性是禁止选择这个optiao元素内容-->
+        <option value="4" disabled>第四个</option>
+    </select>
+</body>
+</html>

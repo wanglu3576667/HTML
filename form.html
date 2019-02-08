@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!--action属性：表单信息提交到的地方，method：提交动作（get/post/put/...
+    )，target：请求页面的打开方式-->
+    <!--form与a除了post/get请求方式的区别以外，其它的几乎没有区别，都是跳转页面-->
+    <form action="user" method="post" target="_blank">
+        <input type="text" name="username">
+        <input type="password" name="password">
+        <!--只有提交按钮submit才能提交form，如果是type="button"，
+         这个按钮是没有提交功能的他只是一个普通按钮，
+        如果拥有submit按钮，你直接回车也一样提交-->
+        <input type="submit" value="提交">
+        <input type="button" value="button">
+        <!--button按钮会被默认升级为submit按钮-->
+        <button>but</button>
+        <!--如果你把button按钮的type改成button，它就是一个普通按钮，没有提交功能-->
+        <button type="button">butt</button>
+        
+    </form>
+</body>
+</html>

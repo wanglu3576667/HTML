@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>table</title>
+</head>
+<body>
+    <!--border属性决定了你的表格边框，但是需要注意，除了你的表格大边框以外，你的
+    每一个小单元格也会出现边框，这样的话边框与边框之间会出现空隙，很难看，所以我们
+    用css的border-collapse: collapse;样式改善了这点。-->
+    <table style="border-collapse: collapse;" border="1">
+        <!--col元素需要和colgroup元素一起使用，他的width属性可以设置一列的宽度
+        第一个col就代表第一列，第二个代表第二列，第三个就代表第三列。-->
+        <colgroup>
+            <col width="100">
+            <col width="100">
+            <col width="100">
+        </colgroup>
+         <!--table元素有三个子元素，分别是thead，tbody，tfoot，分别代表表头，表主体，
+        表底。tr,td,th,这三个元素可以填充你的表格，他们分别代表行，单元格，单元格，th
+        比较特殊，这个元素里面的内容会居中，粗体。-->
+        <!--thead,tbody,tfoot这三个标签的顺序并不是固定的，你可以打乱他们的排序，但是
+        并不会出现错误，因为浏览器会帮你纠正他们的顺序，tbody这个元素也可以不写，浏览器
+        会帮你加上，如果另外两个不写，那么他们里面的表格就会自动归类到tbody元素里面-->
+        <thead>
+            <tr>
+                <th>1</th>
+                <th>1</th>
+                <th>1</th>
+            </tr>
+        </thead>
+        <tbody>
+                <tr>
+                     <th>2</th>
+                     <td>2</td>
+                     <td>2</td>
+                </tr>
+        </tbody>
+        <tfoot>
+                <tr>
+                     <th>3</th>
+                     <td>3</td>
+                     <td>3</td>
+                </tr>
+        </tfoot>
+    </table>
+</body>
+</html>
