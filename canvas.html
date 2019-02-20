@@ -29,8 +29,7 @@
 </html>
 <script type="text/javascript">
 	//获取DOM节点
-	var EARSER = getEle('earser');
-	var PEN = getEle('pen');
+	
 	var CANVAS = getEle('canvas');
 	
 	//设置画板属性以及监听鼠标动作
@@ -39,12 +38,6 @@
 	listenToMouse(CANVAS);
 	
 	//切换橡皮和画笔
-	EARSER.onclick = function (){
-		usingEarser = false;
-	}
-	PEN.onclick = function (){
-		usingEarser = true;
-	}
 
 /**************************************************************************************************/
 	function listenToMouse(CANVAS){
@@ -80,6 +73,14 @@
 		}
 		window.onresize = function (){
 			initCanvasSize();
+		}
+		var EARSER = getEle('earser');
+		var PEN = getEle('pen');
+		EARSER.onclick = function (){
+			usingEarser = false;
+		}
+		PEN.onclick = function (){
+			usingEarser = true;
 		}
 	}
 
