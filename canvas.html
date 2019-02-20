@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>canvas</title>
+	<style type="text/css">
+		*{margin: 0;padding: 0;list-style: none;}
+		#canvas{
+			background-color: white;
+		}
+		body button{
+			display: block;
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+		body button:nth-child(2){
+			top: 0;
+			left:50px;
+		}
+	</style>
+</head>
+<body>
+	<!--添加canvas标签，汉语：画布。-->
+	<canvas id="canvas"></canvas>
+	<button id="earser">大橡皮</button>
+	<button id="pen">写字笔</button>
+</body>
+</html>
+<script type="text/javascript">
+	//获取DOM节点
+	var EARSER = getEle('earser');
+	var PEN = getEle('pen');
+	var CANVAS = getEle('canvas');
+	
+	//设置画板属性以及监听鼠标动作
+	var ctx = CANVAS.getContext('2d');
+	initCanvasSize();
+	listenToMouse(CANVAS);
+	
+	//切换橡皮和画笔
+	EARSER.onclick = function (){
+		usingEarser = false;
+	}
+	PEN.onclick = function (){
+		usingEarser = true;
+	}
+
+/**************************************************************************************************/
+	function listenToMouse(CANVAS){
+		var usingPen = false,usingEarser = true;usingEarser3 = false;
+		var lastXzy = {x:undefined,y:undefined};
+		CANVAS.onmousedown = function (even){
+			if (usingEarser){
+				usingPen = true;
+				var x = even.clientX;
+				var y = even.clientY;
+				drawCircle(x,y);
+				lastXzy.x = x;
+				lastXzy.y = y;
+			}else if(usingEarser==false){
+				ctx.clearRect(x-5,y-5,10,10);
+				usingEarser3=true;
+			}
+		}
+		CANVAS.onmousemove = function (even){
+			var x1 = even.clientX;
+			var y1 = even.clientY;
+			if (usingPen==true){
+				drawLine(lastXzy.x,lastXzy.y,x1,y1);
+			}else if(usingEarser3==true){
+				ctx.clearRect(x1-5,y1-5,10,10);
+			}
+			lastXzy.x = x1;
+			lastXzy.y = y1;
+		}
+		CANVAS.onmouseup = function(){
+			usingPen = false;
+			usingEarser3 = false;
+		}
+		window.onresize = function (){
+			initCanvasSize();
+		}
+	}
+
+	function getEle(name){
+		return document.getElementById(name)
+	}
+
+	function initCanvasSize(){
+		CANVAS.width = document.documentElement.clientWidth;
+		CANVAS.height = document.documentElement.clientHeight;
+	}
+	functi
+	on drawCircle(x,y){
+		ctx.beginPath();
+		ctx.fillStyle ='black';
+		ctx.arc(x,y,2,0,Math.PI*2);
+		ctx.fill();
+	}
+
+	function drawLine(x,y,x1,y1){
+		ctx.beginPath();
+		ctx.moveTo(x,y);
+		ctx.lineWidth= 4;
+		ctx.lineTo(x1,y1);
+		ctx.stroke();
+	}
+	
+
+</script>
