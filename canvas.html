@@ -29,15 +29,13 @@
 </html>
 <script type="text/javascript">
 	//获取DOM节点
-	
 	var CANVAS = getEle('canvas');
-	
 	//设置画板属性以及监听鼠标动作
 	var ctx = CANVAS.getContext('2d');
 	initCanvasSize();
 	listenToMouse(CANVAS);
 	
-	//切换橡皮和画笔
+
 
 /**************************************************************************************************/
 	function listenToMouse(CANVAS){
@@ -56,6 +54,7 @@
 				usingEarser3=true;
 			}
 		}
+		
 		CANVAS.onmousemove = function (even){
 			var x1 = even.clientX;
 			var y1 = even.clientY;
@@ -67,13 +66,16 @@
 			lastXzy.x = x1;
 			lastXzy.y = y1;
 		}
+
 		CANVAS.onmouseup = function(){
 			usingPen = false;
 			usingEarser3 = false;
 		}
+
 		window.onresize = function (){
 			initCanvasSize();
 		}
+
 		var EARSER = getEle('earser');
 		var PEN = getEle('pen');
 		EARSER.onclick = function (){
