@@ -73,7 +73,7 @@
             buttons.eq(index).trigger('click')
 
             //为了欺骗人眼，因首尾图一样，当轮播到尾图时，首图对应的按钮变红
-            if (index === 6){
+            if (index === buttons.length-1){
                 activeClass(buttons.eq(0),'red')
             }
 
