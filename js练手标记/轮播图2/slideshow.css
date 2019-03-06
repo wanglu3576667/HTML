@@ -1,0 +1,9 @@
+*{padding: 0px; margin: 0px; list-style: none;}
+.clearfix{content: ''; display: block; clear: both;}
+.viewport{overflow: hidden;margin: 100px auto; width: 200px;}
+.viewport>.photos{width: 1500px;height :120px;transition: 1s;}
+.viewport>.photos>img{float: left;}
+.viewport>.button{text-align: center; margin-top:6px;}
+.viewport>.button>span{padding:0px 4px; background:gray;border-radius: 50%;}
+.viewport>.button>span:last-child{width: 0px;height:0px;margin:0px;padding:0px;}
+.red{color: red;}
