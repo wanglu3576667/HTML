@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<!--第一小题，标题为我的页面-->
+	<title>我的页面</title>
+	<!--第二小题，引入css文件，路径为绝对路径，当前文件下style.css-->
+	<link rel="stylesheet" type="text/css" href="./style.css" >
+	<!--第三小题，仅在打印时生效-->
+	<link rel="stylesheet" type="text/css" href="./print.css" media="print">
+	<!--第四小题，只在屏幕宽度不大于500px是生效-->
+	<link rel="stylesheet" type="text/css" href="./mobile.css" media="screen and (max-device-width: 500px)">
+</head>
+<body>
+	<!--第七小题，页面中有一个 SVG 标签，SVG 里面有一个直径为 100 像素的圆圈-->
+	<svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+  		<circle cx="100" cy="50" r="50"  fill="yellow"/>
+	</svg>
+</body>
+<!--第五小题，引入js文件，路径为绝对路径，当前文件下main.js-->
+<script type="text/javascript" src="./main.js"></script>
+<!--第六小题，引入JS文件，文件编码为GBK-->
+<script type="text/javascript" src="./gbk.js" charset="GBK"></script>
+</html>
