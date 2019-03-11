@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>一行文字超出隐藏，省略号</title>
+	<style>
+		*{margin:0px;padding: 0px;list-style:none;}
+		.hidden{white-space: nowrap;text-overflow: ellipsis;overflow: hidden;padding: 10px 0px;line-height: 20px;border: red solid 1px;}
+		.name,.call{width:80px;border: black solid 1px;text-align: justify;}
+		.name::after{display: inline-block; width: 100%;content:"";}
+		.call::after{display: inline-block; width: 100%;content:"";}
+		div{display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp: 3;overflow: hidden;}
+			
+	</style>
+		
+</head>
+<body>
+	<section>
+		<p class="hidden">最美不是下雨天，是曾与你躲过雨的屋檐！</p>
+	</section>
+	<section>
+		<p class="name"><span>姓名</span></p>
+		<p class="call">联系方式</p>
+	</section>
+	<div>代课老师九分裤了电视剧法律会计师的考拉见覅偶见大师傅了空间拉开飞机凉快圣诞节法兰克建档立卡父级阿卡丽圣诞节福利卡加的上来看放假了看电视剧法兰克加的上来看富家大室了f</div>
+</body>
+</html>

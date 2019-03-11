@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>浮层的显示与隐藏</title>
+	<style>
+		*{margin:0px;padding: 0px;list-style:none;}
+		div{padding: 20px;border:black 1px solid;}
+		span{position: relative; display: inline-block;padding: 10px;background-color: yellow;margin:0px 10px;}
+		span::after{display: inline-block;content: "";border: 10px solid transparent;position: absolute;top: -1px;left:-20px;border-right:yellow 10px solid;}
+		.active{display: none; }
+		button{height: 50px;}
+	</style>
+</head>
+<body>
+	<div><button>按钮</button><span class="active">浮层</span></div>
+</body>
+<script>
+	var DIV = document.querySelectorAll('div')
+	var BUT = document.querySelectorAll('button')
+	var FLOAT = document.querySelectorAll('span')
+	DIV[0].addEventListener('click',function(event){
+			event.stopPropagation()
+			if (event.target.tagName.toLowerCase()==='button'){
+				if(FLOAT[0].className === 'active'){
+					FLOAT[0].classList.remove('active')
+				}else {
+						FLOAT[0].classList.add('active')
+				}
+				setTimeout(()=>{
+					window.addEventListener('click',function(){
+						console.log(1)
+						FLOAT[0].classList.add('active')
+					},{once:true})
+
+				},0)
+				
+			}
+		},false)
+</script>
+</html>
