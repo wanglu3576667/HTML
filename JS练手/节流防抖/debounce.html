@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>函数防抖</title>
+</head>
+<body>
+    <button id="button">函数防抖</button>
+    <script>
+        {
+            // 给函数做防抖："在一段时间内再无触发重复事件，执行该函数"！
+            function debounce(fun,delay){
+
+                let timer = null //初始化定时器
+
+                return function (){
+
+
+                    if (timer){
+                        clearTimeout(timer) //若计时器存在，直接清空
+                    }
+
+                    timer = setTimeout(()=>{fun.apply(this,arguments)},delay) //设置定时器,箭头函数没有arguments，神坑！
+                }
+              
+            }
+
+           let hehe =  debounce(function(){
+                                    console.log(arguments)
+                                },300)
+
+            button.onclick = ()=>{ hehe(1,2,3,4,5) } 
+        }    
+    </script>
+</body>
+</html>
