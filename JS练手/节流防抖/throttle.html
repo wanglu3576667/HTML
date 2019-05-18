@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>函数节流</title>
+</head>
+<body>
+    <button id="button">函数节流</button>
+
+    <script>
+        {
+            // 给函数做节流："在一段时间内，只让该函数执行一次，这就叫做函数节流"
+            let throttle = (fun,Cycle)=>{
+
+                let lastTime = null
+                let newTime = null 
+                let cycle = Cycle //触发周期
+
+                return function (){
+
+                    newTime = new Date()
+
+                    if (newTime-lastTime > cycle){ //当 前后触发间隔 大于设定的触发周期 执行该函数
+
+                        lastTime = newTime //记住上一次的时间戳
+                        fun.apply(this,arguments)
+                    }
+                }
+            }
+
+            let hehe = throttle(function (){
+                console.log(arguments)
+            },3500)
+
+            button.onclick = ()=>{hehe(1,2,3)}
+        }
+
+    </script>
+</body>
+</html>
